@@ -4,7 +4,7 @@ jobs:
   pool:
     vmImage: ubuntu-16.04
   steps:
-    - template: install.yml
+    - template: install.yaml
     - bash: |
         rustup component add rustfmt
       displayName: Install rustfmt
