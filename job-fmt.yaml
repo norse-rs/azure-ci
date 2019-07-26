@@ -1,0 +1,13 @@
+jobs:
+- job: ${{ parameters.name }}
+  displayName: cargo fmt
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+    - template: install.yml
+    - bash: |
+        rustup component add rustfmt
+      displayName: Install rustfmt
+    - bash: |
+        cargo fmt --all -- --check
+      displayName: Check formatting
