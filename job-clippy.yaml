@@ -4,6 +4,8 @@ parameters:
 jobs:
 - job: ${{ parameters.name }}
   displayName: clippy
+  pool:
+    vmImage: 'Ubuntu-16.04'
   steps:
     - template: install.yaml
     - script: cargo fetch
