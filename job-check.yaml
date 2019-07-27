@@ -1,8 +1,9 @@
+parameters:
+  name: 'check'
+
 jobs:
 - job: ${{ parameters.name }}
-  displayName: cargo check
-  pool:
-    vmImage: ubuntu-16.04
+  displayName: check
   steps:
     - template: install.yaml
     - script: cargo fetch

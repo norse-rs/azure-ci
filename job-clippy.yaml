@@ -1,8 +1,9 @@
+parameters:
+  name: 'clippy'
+
 jobs:
 - job: ${{ parameters.name }}
   displayName: clippy
-  pool:
-    vmImage: ubuntu-16.04
   steps:
     - template: install.yaml
     - script: cargo fetch

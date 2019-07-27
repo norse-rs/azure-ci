@@ -1,3 +1,6 @@
+parameters:
+  name: 'rustfmt'
+
 jobs:
 - job: ${{ parameters.name }}
   displayName: rustfmt
