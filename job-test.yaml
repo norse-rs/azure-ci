@@ -1,0 +1,13 @@
+jobs:
+- job: ${{ parameters.name }}
+  displayName: cargo test
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+    - template: install.yaml
+    - script: cargo fetch
+      displayName: Fetch
+    - script: cargo test --no-run
+      displayName: Check test (no run)
+    - script: cargo test --no-fail-fast
+      displayName: Run tests
